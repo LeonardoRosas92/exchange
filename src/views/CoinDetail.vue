@@ -91,10 +91,6 @@
           <td>{{ $filters.DollarFilter(m.priceUsd) }}</td>
           <td>{{ m.baseSymbol }} / {{ m.quoteSymbol }}</td>
           <td>
-            <px-button v-if="!m.url" @custom-click="getWebSite(m)">
-              <slot>Obtener Link</slot>
-            </px-button>
-            <a class="hover:underline text-green-600" target="_blanck">{{m.url}}</a>
           </td>
         </tr>
       </table>
@@ -104,11 +100,10 @@
 
 <script>
 import api from "@/Api";
-import PxButton from "@/components/PxButton";
 import BounceLoader from "vue-spinner/src/BounceLoader.vue";
 export default {
   name: "CoinDetail",
-  components: { BounceLoader, PxButton },
+  components: { BounceLoader,  },
   data() {
     return {
       isLoading: false,
